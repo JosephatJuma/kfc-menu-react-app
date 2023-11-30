@@ -6,6 +6,7 @@ import ChickenTenders from "./pages/ChickenTenders";
 import HotWings from "./pages/HotWings";
 import Sandwiches from "./pages/Sandwiches";
 import Burgers from "./pages/Burgers";
+import Drinks from "./pages/Drinks";
 function App() {
   return (
     <Router>
@@ -17,6 +18,7 @@ function App() {
             <Route path="/hotwings" element={<HotWings />} />
             <Route path="/sandwiches" element={<Sandwiches />} />
             <Route path="/burgers" element={<Burgers />} />
+            <Route path="/drinks" element={<Drinks />} />
           </Route>
         </Routes>
       </div>

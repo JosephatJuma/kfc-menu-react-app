@@ -3,7 +3,7 @@ import { Grid } from "@mui/material";
 import ItemCard from "../components/ItemCard";
 import NoStaffFound from "../components/NoStaffFound";
 import { chickenTenders } from "../data/chicken-tender";
-function ChickenBuckets() {
+function Drinks() {
   return (
     <>
       {chickenTenders.length > 0 ? (
@@ -19,4 +19,4 @@ function ChickenBuckets() {
   );
 }
 
-export default ChickenBuckets;
+export default Drinks;
