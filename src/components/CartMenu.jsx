@@ -1,7 +1,7 @@
 import * as React from "react";
 import { MenuItem, Divider, Card } from "@mui/material";
 import { IconButton, Tooltip, Typography } from "@mui/material";
-import { ListItemIcon, Menu, Chip, Box, Paper } from "@mui/material";
+import { ListItemIcon, Menu, Chip, Box, Paper, Popover } from "@mui/material";
 import { useSelector, useDispatch } from "react-redux";
 import { changeMode } from "../redux/slices/themeSlice";
 import { ShoppingCart, MoneyOutlined, Remove } from "@mui/icons-material";
@@ -41,7 +41,7 @@ export default function CartMenu(props) {
           />
         </Tooltip>
       </Box>
-      <Menu
+      <Popover
         anchorEl={anchorEl}
         id="cart-menu"
         open={anchorEl ? true : false}
@@ -107,7 +107,7 @@ export default function CartMenu(props) {
             <Typography>Total : {cart.totalAmout}</Typography>
           </MenuItem>
         </Paper>
-      </Menu>
+      </Popover>
     </React.Fragment>
   );
 }

@@ -44,7 +44,7 @@ function ItemCard(props) {
           variant="contained"
           endIcon={<ShoppingCartCheckout />}
           onClick={() => {
-            dispatch(addToCart(props.staff));
+            dispatch(addToCart({ ...props.staff, id: Math.random() }));
             console.log(props.staff);
           }}
         >
