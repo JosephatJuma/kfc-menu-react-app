@@ -1,7 +1,16 @@
 import * as React from "react";
 import { MenuItem, Divider, Card } from "@mui/material";
 import { IconButton, Tooltip, Typography } from "@mui/material";
-import { ListItemIcon, Menu, Chip, Box, Paper, Popover } from "@mui/material";
+import { Link } from "react-router-dom";
+import {
+  ListItemIcon,
+  Menu,
+  Chip,
+  Box,
+  Paper,
+  Popover,
+  Button,
+} from "@mui/material";
 import { useSelector, useDispatch } from "react-redux";
 import { changeMode } from "../redux/slices/themeSlice";
 import { ShoppingCart, MoneyOutlined, Remove } from "@mui/icons-material";
@@ -106,6 +115,20 @@ export default function CartMenu(props) {
             </ListItemIcon>
             <Typography>Total : {cart.totalAmout}</Typography>
           </MenuItem>
+          {cart.cart.length > 0 && (
+            <Link to="/checkout">
+              <Button
+                sx={{
+                  backgroundColor: "#000000",
+                  color: "white",
+                  ":hover": { backgroundColor: "#000000c0", color: "white" },
+                }}
+                fullWidth
+              >
+                Checkout
+              </Button>
+            </Link>
+          )}
         </Paper>
       </Popover>
     </React.Fragment>

@@ -12,7 +12,6 @@ const cartSlice = createSlice({
     addToCart: (state, action) => {
       state.cart.push(action.payload);
       state.totalAmout += action.payload.price;
-      console.log(state.totalAmout);
     },
     removeFromCart: (state, action) => {
       state.cart = state.cart.filter((item) => item.id !== action.payload.id);
