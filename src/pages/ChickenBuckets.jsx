@@ -2,13 +2,13 @@ import React from "react";
 import { Grid } from "@mui/material";
 import ItemCard from "../components/ItemCard";
 import NoStaffFound from "../components/NoStaffFound";
-import { chickenTenders } from "../data/chicken-tender";
+import { buckets } from "../data/buckets";
 function ChickenBuckets() {
   return (
     <>
-      {chickenTenders.length > 0 ? (
+      {buckets.length > 0 ? (
         <Grid container spacing={2}>
-          {chickenTenders.map((item) => (
+          {buckets.map((item) => (
             <ItemCard key={item.id} staff={item} />
           ))}
         </Grid>
