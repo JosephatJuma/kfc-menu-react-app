@@ -7,7 +7,6 @@ import Header from "./components/Header";
 import DrawerComponent from "./components/DrawerComponent";
 import { useSelector } from "react-redux";
 
-import useStaff from "./api/hooks/useStaff";
 const drawerWidth = 240;
 
 function MainLayout(props) {
@@ -15,14 +14,6 @@ function MainLayout(props) {
   const navigate = useNavigate();
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const themeMode = useSelector((state) => state.theme.mode);
-
-  const {
-    handleSubmit,
-    handleFetch,
-    handleDelete,
-    fetchHierarchy,
-    handleEdit,
-  } = useStaff();
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -35,10 +26,7 @@ function MainLayout(props) {
   const container =
     window !== undefined ? () => window().document.body : undefined;
   //Fetch users
-  useEffect(() => {
-    handleFetch();
-    fetchHierarchy();
-  }, []);
+
   return (
     <Box
       sx={{
