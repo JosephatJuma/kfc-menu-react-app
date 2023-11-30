@@ -1,7 +1,11 @@
 import React from "react";
 import { Card, Button, Typography } from "@mui/material";
+import { ShoppingCartCheckout } from "@mui/icons-material";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../redux/slices/cartSlice";
 
 function ItemCard(props) {
+  const dispatch = useDispatch();
   return (
     <Card
       sx={{
@@ -31,7 +35,19 @@ function ItemCard(props) {
         <Typography variant="subtitle2">{props.staff.name}</Typography>
         <Typography variant="body2">UGX: {props.staff.price}</Typography>
 
-        <Button sx={{ backgroundColor: "#FF4500", color: "white" }}>
+        <Button
+          sx={{
+            backgroundColor: "#FF4500",
+            color: "white",
+            ":hover": { backgroundColor: "#FF4500c0" },
+          }}
+          variant="contained"
+          endIcon={<ShoppingCartCheckout />}
+          onClick={() => {
+            dispatch(addToCart(props.staff));
+            console.log(props.staff);
+          }}
+        >
           Add to Cart
         </Button>
       </center>

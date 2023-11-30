@@ -9,7 +9,6 @@ import {
 import { Menu } from "@mui/icons-material";
 import AccountMenu from "./ActionMenu";
 import { useDispatch } from "react-redux";
-import { toggleShowAddModal } from "../redux/slices/staffSlice";
 import CartMenu from "./CartMenu";
 import SearchComponent from "./SearchComponent";
 

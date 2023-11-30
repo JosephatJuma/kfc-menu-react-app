@@ -1,20 +1,17 @@
 import * as React from "react";
-import { MenuItem, Divider } from "@mui/material";
+import { MenuItem, Divider, Card } from "@mui/material";
 import { IconButton, Tooltip, Typography } from "@mui/material";
-import { ListItemIcon, Menu, Button, Box } from "@mui/material";
+import { ListItemIcon, Menu, Chip, Box, Paper } from "@mui/material";
 import { useSelector, useDispatch } from "react-redux";
 import { changeMode } from "../redux/slices/themeSlice";
-import {
-  ShoppingCart,
-  Settings,
-  Person,
-  Brightness4,
-} from "@mui/icons-material";
+import { ShoppingCart, MoneyOutlined, Remove } from "@mui/icons-material";
+import { removeFromCart } from "../redux/slices/cartSlice";
 
 export default function CartMenu(props) {
   const [anchorEl, setAnchorEl] = React.useState(false);
   const dispatch = useDispatch();
   const themeMode = useSelector((state) => state.theme.mode);
+  const cart = useSelector((state) => state.cart);
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -36,6 +33,12 @@ export default function CartMenu(props) {
           >
             <ShoppingCart sx={{ color: "#FF4500" }} />
           </IconButton>
+          <Chip
+            label={cart.cart.length}
+            size="small"
+            color="primary"
+            sx={{ position: "absolute", top: 1, right: 80 }}
+          />
         </Tooltip>
       </Box>
       <Menu
@@ -75,12 +78,35 @@ export default function CartMenu(props) {
       >
         <Typography sx={{ padding: "16px" }}>Shopping Cart</Typography>
         <Divider />
-        <MenuItem>
-          <ListItemIcon>
-            <Person />
-          </ListItemIcon>
-          Profile
-        </MenuItem>
+        <Paper>
+          {cart.cart.length > 0 ? (
+            cart.cart.map((item, index) => (
+              <MenuItem
+                key={index}
+                sx={{ display: "flex", justifyContent: "space-between" }}
+              >
+                <Typography>{item.name}</Typography>
+                <IconButton
+                  sx={{ backgroundColor: "red" }}
+                  onClick={() => dispatch(removeFromCart(item))}
+                >
+                  <Remove />
+                </IconButton>
+              </MenuItem>
+            ))
+          ) : (
+            <MenuItem>
+              <Typography>No Item</Typography>
+            </MenuItem>
+          )}
+
+          <MenuItem>
+            <ListItemIcon>
+              <MoneyOutlined />
+            </ListItemIcon>
+            <Typography>Total : {cart.totalAmout}</Typography>
+          </MenuItem>
+        </Paper>
       </Menu>
     </React.Fragment>
   );
