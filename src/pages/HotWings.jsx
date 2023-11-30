@@ -5,31 +5,28 @@ import ItemCard from "../components/ItemCard";
 import LoadingComponent from "../components/LoadingComponent";
 import NoStaffFound from "../components/NoStaffFound";
 import useStaff from "../api/hooks/useStaff";
+import { chickenWings } from "../data/cheicken-wings";
 function HotWings() {
   const list = useSelector((state) => state.staff.userList);
   const loading = useSelector((state) => state.staff.loading);
   const { handleFetch } = useStaff();
 
-  const loadingRender = {
-    true: <LoadingComponent />,
-    false: (
-      <>
-        {list.length > 0 ? (
-          <Grid container spacing={2}>
-            {list.map((item) => (
-              <ItemCard key={item.id} staff={item} />
-            ))}
-          </Grid>
-        ) : (
-          <NoStaffFound
-            message="There is no item to show!"
-            refresh={handleFetch}
-          />
-        )}
-      </>
-    ),
-  }[loading];
-  return <>{loadingRender}</>;
+  return (
+    <>
+      {chickenWings.length > 0 ? (
+        <Grid container spacing={2}>
+          {chickenWings.map((item) => (
+            <ItemCard key={item.id} staff={item} />
+          ))}
+        </Grid>
+      ) : (
+        <NoStaffFound
+          message="There is no item to show!"
+          refresh={handleFetch}
+        />
+      )}
+    </>
+  );
 }
 
 export default HotWings;

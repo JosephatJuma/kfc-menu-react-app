@@ -1,10 +1,17 @@
 import React, { useState, useEffect } from "react";
-import { AppBar, Toolbar, IconButton, Typography, Button } from "@mui/material";
-import { Menu, ShoppingCart } from "@mui/icons-material";
+import {
+  AppBar,
+  Toolbar,
+  IconButton,
+  Typography,
+  TextField,
+} from "@mui/material";
+import { Menu } from "@mui/icons-material";
 import AccountMenu from "./ActionMenu";
 import { useDispatch } from "react-redux";
 import { toggleShowAddModal } from "../redux/slices/staffSlice";
 import CartMenu from "./CartMenu";
+import SearchComponent from "./SearchComponent";
 
 function Header(props) {
   const dispatch = useDispatch();
@@ -47,6 +54,7 @@ function Header(props) {
           {greeting} Customer
         </Typography>
         <div style={{ display: "flex" }}>
+          <SearchComponent />
           <CartMenu />
           <AccountMenu />
         </div>

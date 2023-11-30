@@ -2,13 +2,13 @@ import React from "react";
 import { Grid } from "@mui/material";
 import ItemCard from "../components/ItemCard";
 import NoStaffFound from "../components/NoStaffFound";
-import { chickenTenders } from "../data/chicken-tender";
-function ChickenTenders() {
+import { burgers } from "../data/burgers";
+function Burgers() {
   return (
     <>
-      {chickenTenders.length > 0 ? (
+      {burgers.length > 0 ? (
         <Grid container spacing={2}>
-          {chickenTenders.map((item) => (
+          {burgers.map((item) => (
             <ItemCard key={item.id} staff={item} />
           ))}
         </Grid>
@@ -19,4 +19,4 @@ function ChickenTenders() {
   );
 }
 
-export default ChickenTenders;
+export default Burgers;

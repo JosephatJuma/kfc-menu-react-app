@@ -25,7 +25,7 @@ export default function CartMenu(props) {
   return (
     <React.Fragment>
       <Box sx={{ display: "flex", alignItems: "center", textAlign: "center" }}>
-        <Tooltip title="Settings">
+        <Tooltip title="Shopping Cart">
           <IconButton
             onClick={handleClick}
             size="small"
