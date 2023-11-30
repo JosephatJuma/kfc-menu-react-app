@@ -5,21 +5,8 @@ import { Outlet, useNavigate } from "react-router-dom";
 
 import Header from "./components/Header";
 import DrawerComponent from "./components/DrawerComponent";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 
-import {
-  toggleShowAddModal,
-  setError,
-  setMessage,
-  toggleShowDeleteModal,
-  toggleShowEditModal,
-} from "./redux/slices/staffSlice";
-import FormModal from "./components/FormModal";
-import AddStaffForm from "./forms/AddStaffForm";
-import EditStaffForm from "./forms/EditStaffForm";
-import SuccessAlert from "./components/SuccessAlert";
-import ErrorAlert from "./components/ErrorAlert";
-import ConfirmAlert from "./components/ConfirmAlert";
 import useStaff from "./api/hooks/useStaff";
 const drawerWidth = 240;
 
@@ -28,14 +15,7 @@ function MainLayout(props) {
   const navigate = useNavigate();
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const themeMode = useSelector((state) => state.theme.mode);
-  const dispatch = useDispatch();
-  const showAdd = useSelector((state) => state.staff.showAddModal);
-  const showEdit = useSelector((state) => state.staff.showEditModal);
-  const showDelete = useSelector((state) => state.staff.showDeleteModal);
-  const deleting = useSelector((state) => state.staff.submitting);
-  const successMessage = useSelector((state) => state.staff.message);
-  const errorMessage = useSelector((state) => state.staff.error);
-  const selectedStaff = useSelector((state) => state.staff.selectedStaff);
+
   const {
     handleSubmit,
     handleFetch,
@@ -146,32 +126,6 @@ function MainLayout(props) {
         >
           <Outlet />
         </Box>
-        <FormModal
-          open={showAdd}
-          handleClose={() => dispatch(toggleShowAddModal())}
-          title="Add a staff member"
-        >
-          <AddStaffForm handleSubmit={handleSubmit} />
-        </FormModal>
-        <FormModal
-          open={showEdit}
-          handleClose={() => dispatch(toggleShowEditModal())}
-          title={`Edit ${selectedStaff.name} `}
-        >
-          <EditStaffForm handleEdit={handleEdit} />
-        </FormModal>
-        <SuccessAlert
-          message={successMessage}
-          close={() => dispatch(setMessage(""))}
-        />
-        <ErrorAlert error={errorMessage} close={() => dispatch(setError(""))} />
-        <ConfirmAlert
-          open={showDelete}
-          close={() => dispatch(toggleShowDeleteModal())}
-          action={() => handleDelete(selectedStaff.id)}
-          message={`Do you want to delete this staff?`}
-          performing={deleting}
-        />
       </Box>
     </Box>
   );

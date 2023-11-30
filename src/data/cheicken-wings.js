@@ -1,91 +1,70 @@
-import image1 from "../images/chicken-tenders/image1.jpg";
-import image2 from "../images/chicken-tenders/image2.jpg";
-import image3 from "../images/chicken-tenders/image3.jpeg";
-import image4 from "../images/chicken-tenders/image4.jpg";
-import image5 from "../images/chicken-tenders/image5.jpg";
-import image6 from "../images/chicken-tenders/image6.jpg";
-import image7 from "../images/chicken-tenders/image7.jpeg";
-import image8 from "../images/chicken-tenders/image8.jpeg";
-import image9 from "../images/chicken-tenders/image9.jpeg";
-import image10 from "../images/chicken-tenders/image10.jpg";
+import wings1 from "../images/wings/wings1.jpg";
+import wings2 from "../images/wings/wings2.jpg";
+import wings3 from "../images/wings/wings3.jpg";
+import wings4 from "../images/wings/wings4.jpeg";
+import wings5 from "../images/wings/wings5.jpeg";
+import wings6 from "../images/wings/wings6.jpeg";
+import wings8 from "../images/wings/wings8.jpeg";
 
 export const chickenWings = [
   {
     id: 1,
-    name: "Air Fryer Chicken Tenders",
-    image: image1,
-    description: "Chicken Tenders",
-    price: 20000,
+    name: "BBQ Wings",
+    image: wings1,
+    description: "BBQ Wings - Budget BytesBBQ Wings - Budget Bytes",
+    price: 30000,
   },
   {
     id: 2,
-    name: "Buttermilk Fried Chicken Tenders",
-    image: image2,
-    description:
-      "Southern BytesButtermilk Fried Chicken Tenders - Southern Bytes  Buttermilk Fried Chicken Tenders",
-    price: 21000,
+    name: "Buffalo Wings",
+    image: wings2,
+    description: "Buffalo Wings - Budget BytesBuffalo Wings - Budget Bytes",
+    price: 30000,
   },
   {
     id: 3,
-    name: "Chicken Tenders",
-    image: image3,
-    description: "Chicken Tenders",
-    price: 20000,
+    name: "Honey Garlic Chicken Wings",
+    image: wings3,
+    description:
+      " Honey Garlic Chicken Wings - Budget BytesHoney Garlic Chicken Wings - Budget Bytes",
+    price: 30000,
   },
   {
     id: 4,
-    name: "Baked Chicken Tenders Recipe",
-    image: image4,
-    description:
-      "Cooking ClassyBaked Chicken Tenders Recipe - Cooking Classy Baked Chicken Tenders",
-    price: 20000,
+    name: "Honey BBQ Wings",
+    image: wings4,
+    description: "Honey BBQ Wings - Budget BytesHoney BBQ Wings - Budget Bytes",
+    price: 30000,
   },
   {
     id: 5,
-    name: "Oven-Fried Chicken Tenders Recipe",
-    image: image5,
+    name: "Honey Chipotle Wings",
+    image: wings5,
     description:
-      "BettyCrocker.comOven-Fried Chicken Tenders Recipe - BettyCrocker.com Oven-Fried Chicken Tenders",
-    price: 20000,
+      "Honey Chipotle Wings - Budget BytesHoney Chipotle Wings - Budget Bytes",
+    price: 30000,
   },
   {
     id: 6,
-    name: "Air Fryer Chicken Tenders Recipe",
-    image: image6,
+    name: "Honey Honey Chipotle Wings",
+    image: wings6,
     description:
-      "Easy Chicken RecipesAir Fryer Chicken Tenders Recipe - Easy Chicken Recipes Air Fryer Chicken Tenders Recipe",
-    price: 20000,
+      "Honey Honey Chipotle Wings - Budget BytesHoney Honey Chipotle Wings - Budget Bytes",
+    price: 30000,
   },
   {
     id: 7,
-    name: "Grilled Chicken Tenders (8 Minute Recipe)",
-    image: image7,
+    name: "Honey Honey Honey Chipotle Wings",
+    image: wings6,
     description:
-      "The Big Man's World Grilled Chicken Tenders (8 Minute Recipe) - The Big Man's World Grilled Chicken Tenders",
-    price: 20000,
+      "Honey Honey Honey Chipotle Wings - Budget BytesHoney Honey Honey Chipotle Wings - Budget Bytes",
+    price: 30000,
   },
   {
     id: 8,
-    name: "Crispy Fried Chicken Tenders",
-    image: image8,
-    description:
-      "YellowBlissRoad.comCrispy Fried Chicken Tenders | YellowBlissRoad.com Cajun Chicken Tenders",
-    price: 20000,
-  },
-  {
-    id: 9,
-    name: "Crispy Fried Chicken Tenders",
-    image: image9,
-    description:
-      "YellowBlissRoad.comCrispy Fried Chicken Tenders | YellowBlissRoad.com Cajun Chicken Tenders",
-    price: 20000,
-  },
-  {
-    id: 10,
-    name: "Crispy Fried Chicken Tenders",
-    image: image10,
-    description:
-      "YellowBlissRoad.comCrispy Fried Chicken Tenders | YellowBlissRoad.com Cajun Chicken Tenders",
-    price: 20000,
+    name: "Honey Glazed Chicken Wings",
+    image: wings8,
+    description: "Recipe GirlHoney Glazed Chicken Wings - Recipe Girl",
+    price: 30000,
   },
 ];

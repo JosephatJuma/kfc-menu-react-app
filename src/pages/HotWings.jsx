@@ -6,6 +6,7 @@ import LoadingComponent from "../components/LoadingComponent";
 import NoStaffFound from "../components/NoStaffFound";
 import useStaff from "../api/hooks/useStaff";
 import { chickenWings } from "../data/cheicken-wings";
+
 function HotWings() {
   const list = useSelector((state) => state.staff.userList);
   const loading = useSelector((state) => state.staff.loading);
