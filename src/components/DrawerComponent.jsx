@@ -47,18 +47,6 @@ function DrawerComponent({ drawerWidth, toggleDrawer, logout }) {
       name: "Driks & Beverages",
       link: "/drinks",
     },
-    {
-      name: "Box Meals",
-      link: "/boxmeals",
-    },
-    {
-      name: "Salads",
-      link: "/salads",
-    },
-    {
-      name: "Sides",
-      link: "/sides",
-    },
   ];
   return (
     <div>
